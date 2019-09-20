@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>welcome !</title>
 </head>
@@ -13,36 +15,36 @@
     <div class="container mt-5 px-5">
         <div class="row">
             <div class="col">
-                <h1>Hello</h1>
-                <h3>my name is Mojtaba Rakhisi</h3>
-                <h4>A Full-Stack Web Developer</h4>
-                <div class="mt-5">
-                    <h5>Summary:</h5>
-                    Experienced web developer and software engineer looking for advanced programming
-                    (Full-stack developer) position .  Certified in PHP, have collaborated with web development
-                    team to create site for startup business,
-                    Proficient in both coding and design,
-                    as well as software debugging.
-                    Fluent in PHP, JavaScript, and frontend tools .
-                </div>
-                <div class="mt-4">
-                    <h5>Career Objective:</h5>
-                    To gain advanced position as a Developer in an IT company that can provide me
-                    an opportunity to work on several projects for writing, testing,
-                    and debugging code and help the websites operate flawlessly.
+                <h3 id="introduction"></h3>
+                <div id="summary-description" style="display: none;">
+                    <div class="mt-5">
+                        <h5>Summary:</h5>
+                        Experienced web developer and software engineer looking for advanced programming
+                        (Full-stack developer) position .  Certified in PHP, have collaborated with web development
+                        team to create site for startup business,
+                        Proficient in both coding and design,
+                        as well as software debugging.
+                        Fluent in PHP, JavaScript, and frontend tools .
+                    </div>
+                    <div class="mt-4">
+                        <h5>Career Objective:</h5>
+                        To gain advanced position as a Developer in an IT company that can provide me
+                        an opportunity to work on several projects for writing, testing,
+                        and debugging code and help the websites operate flawlessly.
+                    </div>
                 </div>
             </div>
-            <div class="col p-1 ml-5" id="profile-wrapper">
-                <img src="assets/img/profile.jpg" id="profile-img" style="display: none" class="w-100" alt="">
+            <div class="col p-1 ml-5" id="profile-wrapper" style="display: none">
+                <img src="assets/img/profile2.jpg" id="profile-img" class="w-100" alt="">
             </div>
         </div>
         <hr>
         <div class="row mt-5">
-            <div class="col">
+            <div class="col-6" id="summary-wrapper" style="display: none;">
                 <div class="mt-4">
                     <h5>Summary of Skills:</h5>
                     <ul>
-                        <li>2+ years of professional experience as a PHP programmer</li>
+                        <li>3+ years of professional experience as a PHP programmer</li>
                         <li>Excellent knowledge of developing web services and relational databases</li>
                         <li>Experience in common third-party APIs</li>
                         <li>Passionate about giving best code design and following coding practices</li>
@@ -53,15 +55,27 @@
                     </ul>
                 </div>
             </div>
-            <div class="col"></div>
+            <div class="col-6" id="portfolio-warapper" style="display: none;">
+                <div class="row justify-content-center align-items-center">
+                    <!-- Set up your HTML -->
+                    <div class="owl-carousel mt-4 col-8">
+                        <a target="_blank" href="http://omdex.ir"><img src="assets/img/portfolios/edited/omdex.png" alt=""></a>
+                        <a target="_blank" href="http://cotintgroup.com"><img src="assets/img/portfolios/edited/cotint.png" alt=""></a>
+                        <a target="_blank" href="http://member-rayan.ir"><img src="assets/img/portfolios/edited/rayan.png" alt=""></a>
+                        <a target="_blank" href="http://nikookarikhoy.ir"><img src="assets/img/portfolios/edited/khoy.png" alt=""></a>
+                        <a target="_blank" href="http://mashbook.ir"><img src="assets/img/portfolios/edited/mashbook.png" alt=""></a>
+                        <a target="_blank" href="http://barangfood.com"><img src="assets/img/portfolios/edited/barang.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col">
+            <div class="col-6" id="technical-wrapper" style="display: none;">
                 <div class="mt-4">
                     <h5>Technical Skills:</h5>
                     <ul>
-                        <li>Extensive knowledge of HTML/CSS, Unix/ Linux platform, PHP{/ MySQL, jQuery, Apache Server and Ajax /}.</li>
+                        <li>Extensive knowledge of HTML/CSS, Unix/ Linux platform, PHP{/ MySQL, jQuery, Apache WebServer and Ajax /}.</li>
                         <li>In-depth knowledge of PHP frameworks like Laravel and frontend frameworks like Bootstrap.</li>
                         <li>Fluent working with Version Control Systems (Git : {Gitlab / Github})</li>
                         <li>good grasp on agile methods and scrum framework for faster programming</li>
@@ -72,11 +86,30 @@
                     </ul>
                 </div>
             </div>
-            <div class="col"></div>
+            <div class="col-6" id="skills-wrapper" style="display: none;">
+                <div class="row justify-content-center align-items-center">
+                    <!-- Set up your HTML -->
+                    <div class="owl-carousel mt-4 col-8">
+                        <div><img src="assets/img/logo/php.png" alt=""></div>
+                        <div><img src="assets/img/logo/laravel.png" alt=""></div>
+                        <div><img src="assets/img/logo/symfony.png" alt=""></div>
+                        <div><img src="assets/img/logo/agile.png" alt=""></div>
+                        <div><img src="assets/img/logo/redis.png" alt=""></div>
+                        <div><img src="assets/img/logo/mysql.png" alt=""></div>
+                        <div><img src="assets/img/logo/git.png" alt=""></div>
+                        <div><img src="assets/img/logo/jquery.png" alt=""></div>
+                        <div><img src="assets/img/logo/ubuntu.png" alt=""></div>
+                        <div><img src="assets/img/logo/html.png" alt=""></div>
+                        <div><img src="assets/img/logo/css3.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="node_modules/typeit/dist/typeit.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>
