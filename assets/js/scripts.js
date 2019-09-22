@@ -1,26 +1,23 @@
 $(document).ready(function(){
-
-
     let type_writer = new TypeIt('#introduction', {
-        speed: 100 ,
+        speed: 45 ,
         afterComplete: (instance) => {
             //-- Will fire after the entire instance has completed typing.
             //-- NOTE: If "loop" is enabled, this will never fire.
             setInterval(function () {
-                $("#profile-wrapper").slideDown(500).addClass('border').complete(function () {
-                    $("#summary-description").css({ "display" : "block" }).slideDown(500)
-                });
-            } , 1000);
+                $("#summary-description").slideDown(2000);
+                $("#profile-wrapper").slideDown(2000);
+            } , 100);
         },
     })
         .type("Hello !")
-        .pause(300)
+        .pause(100)
         .break()
-        .type("My Name Is Motabjaaa")
-        .pause(300)
-        .options({speed : 300})
-        .delete(7)
-        .options({speed : 100})
+        .type("My Name Is Motab")
+        .pause(100)
+        .options({speed : 200})
+        .delete(3)
+        .options({speed : 50})
         .type("jtaba Rakhii")
         .pause(200)
         .options({speed : 300})
@@ -28,24 +25,60 @@ $(document).ready(function(){
         .options({speed : 100})
         .type("si")
         .break()
-        .options({speed : 100})
+        .options({speed : 45})
         .type("A Full-Stack wbe")
         .pause(100)
-        .options({speed : 300})
+        .options({speed : 100})
         .delete(2)
         .options({speed : 100})
-        .type("eb Delevopr")
-        .pause(300)
-        .options({speed : 300})
-        .delete(7)
-        .options({speed : 200})
-        .type("eveloper  ")
-        .pause(500)
+        .type("eb Developer")
+        .pause(20)
         .type(":)");
 
     type_writer.go();
 
 
+    let lastScrollTop = 0;
+    $(window).scroll(function(event){
+        let st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            // scroll down code
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+
+                if ($("#summary-wrapper").visible(true) && $("#summary-title").text() === '') {
+                    new TypeIt('#summary-title', {
+                        speed: 50 ,
+                        afterComplete() {
+                            $("#summary-wrapper").slideDown('normal' , function () {
+                                $("#portfolio-wrapper").fadeIn(1000);
+
+                                new TypeIt('#technical-title' , {
+                                    speed : 50 ,
+                                    afterComplete() {
+                                        $("#technical-wrapper").slideDown('normal' , function () {
+                                            $("#skills-wrapper").fadeIn(1000)
+                                        })
+                                    }
+                                }).type('Technical Skills:').go();
+
+                            })
+
+                        }
+                    }).type('Summary of Skills:').go();
+                }
+
+                if ($("#technical-wrapper").visible(true) && $("#technical-title").text() === '') {
+
+                }
+
+            }
+
+
+
+        }
+        lastScrollTop = st;
+    });
 
     let owl = $('.owl-carousel');
     owl.owlCarousel({
