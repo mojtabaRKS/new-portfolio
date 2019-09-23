@@ -1,13 +1,12 @@
-$(document).ready(function(){
+$(document).ready(function () {
     let type_writer = new TypeIt('#introduction', {
-        speed: 45 ,
+        speed: 45,
         afterComplete: (instance) => {
             //-- Will fire after the entire instance has completed typing.
             //-- NOTE: If "loop" is enabled, this will never fire.
-            setInterval(function () {
-                $("#summary-description").slideDown(2000);
-                $("#profile-wrapper").slideDown(2000);
-            } , 100);
+            $("#summary-description").slideDown(500, function () {
+                $("#profile-wrapper").slideDown(1000);
+            });
         },
     })
         .type("Hello !")
@@ -15,22 +14,22 @@ $(document).ready(function(){
         .break()
         .type("My Name Is Motab")
         .pause(100)
-        .options({speed : 200})
+        .options({speed: 200})
         .delete(3)
-        .options({speed : 50})
+        .options({speed: 50})
         .type("jtaba Rakhii")
         .pause(200)
-        .options({speed : 300})
+        .options({speed: 300})
         .delete(1)
-        .options({speed : 100})
+        .options({speed: 100})
         .type("si")
         .break()
-        .options({speed : 45})
+        .options({speed: 45})
         .type("A Full-Stack wbe")
         .pause(100)
-        .options({speed : 100})
+        .options({speed: 100})
         .delete(2)
-        .options({speed : 100})
+        .options({speed: 100})
         .type("eb Developer")
         .pause(20)
         .type(":)");
@@ -39,41 +38,61 @@ $(document).ready(function(){
 
 
     let lastScrollTop = 0;
-    $(window).scroll(function(event){
+    $(window).scroll(function (event) {
         let st = $(this).scrollTop();
-        if (st > lastScrollTop){
+        if (st > lastScrollTop) {
             // scroll down code
-            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
 
 
                 if ($("#summary-wrapper").visible(true) && $("#summary-title").text() === '') {
                     new TypeIt('#summary-title', {
-                        speed: 50 ,
+                        speed: 50,
                         afterComplete() {
-                            $("#summary-wrapper").slideDown('normal' , function () {
+                            $("#summary-wrapper").slideDown('normal', function () {
                                 $("#portfolio-wrapper").fadeIn(1000);
-
-                                new TypeIt('#technical-title' , {
-                                    speed : 50 ,
-                                    afterComplete() {
-                                        $("#technical-wrapper").slideDown('normal' , function () {
-                                            $("#skills-wrapper").fadeIn(1000)
-                                        })
-                                    }
-                                }).type('Technical Skills:').go();
-
                             })
 
                         }
                     }).type('Summary of Skills:').go();
                 }
 
-                if ($("#technical-wrapper").visible(true) && $("#technical-title").text() === '') {
-
+                if ($("#technical-wrapper").visible(true) && $('#technical-title').text() === '') {
+                    new TypeIt('#technical-title', {
+                        speed: 50,
+                        afterComplete() {
+                            $("#technical-wrapper").slideDown('normal', function () {
+                                $("#skills-wrapper").fadeIn(1000)
+                            });
+                        }
+                    }).type('Technical Skills:').go();
                 }
 
-            }
+                if ($("#contact-form-wrapper").visible(true) && $('#want-to-email').text() === '') {
+                    new TypeIt('#want-to-email', {
+                        speed: 45,
+                        afterComplete() {
+                            $("#contact-form-wrapper").slideDown(1000 , function () {
 
+                                new TypeIt('#contact-data', {speed: 45})
+                                    .type("Mail : mojtaba.rakhisi@gmail.com")
+                                    .break()
+                                    .type("mobile : (+98) 921 267 34 51")
+                                    .break()
+                                    .type("Location : Tehran / Iran")
+                                    .go();
+
+                            });
+                        }
+                    }).type('Get in touch : ').go();
+                }
+
+                new TypeIt('#copy-right', {
+                    speed : 20
+                }).type("Copyright 2019 . All Rights Reserved")
+                    .go();
+
+            }
 
 
         }
@@ -82,12 +101,12 @@ $(document).ready(function(){
 
     let owl = $('.owl-carousel');
     owl.owlCarousel({
-        items:1,
+        items: 1,
 
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:2000,
-        autoplayHoverPause:true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
         nav: true,
         navClass: ['owl-next .btn', 'owl-prev .btn'],
         navContainerClass: 'js-carousel-nav owl-nav',
