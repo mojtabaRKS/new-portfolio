@@ -9,7 +9,7 @@ $(document).ready(function () {
             });
         },
     })
-        .type("Hello !")
+        .type("Hi there !")
         .pause(100)
         .break()
         .type("My Name Is Motab")
@@ -75,9 +75,9 @@ $(document).ready(function () {
                             $("#contact-form-wrapper").slideDown(1000 , function () {
 
                                 new TypeIt('#contact-data', {speed: 45})
-                                    .type("Mail : mojtaba.rakhisi@gmail.com")
+                                    .type("Email : mojtaba.rakhisi@gmail.com")
                                     .break()
-                                    .type("mobile : (+98) 921 267 34 51")
+                                    .type("Tel : (+98) 921 267 34 51")
                                     .break()
                                     .type("Location : Tehran / Iran")
                                     .go();
