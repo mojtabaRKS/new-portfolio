@@ -14,24 +14,6 @@ input, textarea {
 .border {
   border: 2px solid #00FF00 !important; }
 
-.owl-nav {
-  position: relative;
-  top: -25em; }
-
-.owl-prev {
-  float: right;
-  left: .8em;
-  position: relative;
-  font-size: 10em !important;
-  outline: none !important; }
-
-.owl-next {
-  float: left;
-  right: .8em;
-  position: relative;
-  font-size: 10em !important;
-  outline: none !important; }
-
 .hidden {
   display: none; }
 
