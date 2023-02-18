@@ -68,7 +68,7 @@ $(document).ready(function () {
                                                 afterComplete() {
                                                     scrollDownToPage()
                                                 }
-                                            }).type("Copyright 2019 . All Rights Reserved")
+                                            }).type("Copyright 2023 . All Rights Reserved")
                                                 .go();
                                         }})
                                             .type("Email : mojtaba.rakhisi@gmail.com")
