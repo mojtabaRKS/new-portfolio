@@ -24,7 +24,7 @@ $(document).ready(function () {
         .options({speed: 300})
         .delete(1)
         .options({speed: 150})
-        .type("si")
+        .type("s")
         .break()
         .options({speed: 45})
         .type("A Software ")
@@ -98,7 +98,7 @@ $(document).ready(function () {
                         .break()
                         .type("Concepts: TDD - DDD - Design patterns - Software Architecture - Algorithms - Data Structures")
                         .break()
-                        .type("Familiar with: Python -  Javascript - Neo4j - CI/CD - Shel")
+                        .type("Familiar with: Python -  Javascript - Neo4j - CI/CD - Shell")
                         .break()
                         .type("Languages: English (Professional Working Proficiency) - Persian (Native) - Arabic (Begginer)")
                     .go();
