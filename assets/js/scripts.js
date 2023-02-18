@@ -6,31 +6,31 @@ $(document).ready(function () {
             //-- NOTE: If "loop" is enabled, this will never fire.
             $("#summary-description").slideDown(500, function () {
                 $("#profile-wrapper").slideDown(1000);
+                scrollDownToPage()
             });
         },
     })
         .type("Hi there !")
         .pause(100)
         .break()
-        .type("My Name Is Motab")
+        .type("I Am Motab")
         .pause(100)
         .options({speed: 200})
         .delete(3)
         .options({speed: 50})
-        .type("jtaba Rakhii")
+        .type("ji")
         .pause(200)
+        .type(' Rakhii')
         .options({speed: 300})
         .delete(1)
-        .options({speed: 100})
+        .options({speed: 150})
         .type("si")
         .break()
         .options({speed: 45})
-        .type("A Full-Stack wbe")
-        .pause(100)
+        .type("A Software ")
+        .pause(200)
         .options({speed: 100})
-        .delete(2)
-        .options({speed: 100})
-        .type("eb Developer")
+        .type("Engineer")
         .pause(20)
         .type(":)");
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
 
     let lastScrollTop = 0;
-    $(window).scroll(function (event) {
+    $(window).on('scroll',function (event) {
         let st = $(this).scrollTop();
         if (st > lastScrollTop) {
             // scroll down code
@@ -52,45 +52,57 @@ $(document).ready(function () {
                             $("#summary-wrapper").slideDown('normal', function () {
                                 $("#portfolio-wrapper").fadeIn(1000);
                             })
+                            scrollDownToPage()
 
+
+                            new TypeIt('#want-to-email', {
+                                speed: 45,
+                                afterComplete() {
+                                    scrollDownToPage()
+                                    $("#contact-form-wrapper").slideDown(1000 , function () {
+                                        scrollDownToPage()
+        
+                                        new TypeIt('#contact-data', {speed: 45 , afterComplete() {
+                                            new TypeIt('#copy-right', {
+                                                speed : 20,
+                                                afterComplete() {
+                                                    scrollDownToPage()
+                                                }
+                                            }).type("Copyright 2019 . All Rights Reserved")
+                                                .go();
+                                        }})
+                                            .type("Email : mojtaba.rakhisi@gmail.com")
+                                            .break()
+                                            .type("Github : https://github.com/mojtabaRKS")
+                                            .break()
+                                            .type("Linkedin : https://www.linkedin.com/in/mojtaba-rakhisi/")
+                                            .break()
+                                            .type("Tel : (+98) 921 267 34 51")
+                                            .break()
+                                            .type("Location : Tehran / Iran")
+                                            .go();
+        
+                                    });
+                                }
+                            }).type('Get in touch : ').go();
                         }
-                    }).type('Summary of Skills:').go();
-                }
-
-                if ($("#technical-wrapper").visible(true) && $('#technical-title').text() === '') {
-                    new TypeIt('#technical-title', {
-                        speed: 50,
-                        afterComplete() {
-                            $("#technical-wrapper").slideDown('normal', function () {
-                                $("#skills-wrapper").fadeIn(1000)
-                            });
-                        }
-                    }).type('Technical Skills:').go();
-                }
-
-                if ($("#contact-form-wrapper").visible(true) && $('#want-to-email').text() === '') {
-                    new TypeIt('#want-to-email', {
-                        speed: 45,
-                        afterComplete() {
-                            $("#contact-form-wrapper").slideDown(1000 , function () {
-
-                                new TypeIt('#contact-data', {speed: 45})
-                                    .type("Email : mojtaba.rakhisi@gmail.com")
-                                    .break()
-                                    .type("Tel : (+98) 921 267 34 51")
-                                    .break()
-                                    .type("Location : Tehran / Iran")
-                                    .go();
-
-                            });
-                        }
-                    }).type('Get in touch : ').go();
-                }
-
-                new TypeIt('#copy-right', {
-                    speed : 20
-                }).type("Copyright 2019 . All Rights Reserved")
+                    }).type("Skill Set: \n")
+                        .break()
+                        .type("Stacks: PHP (6 years) - GoLang (1 year)")
+                        .break()
+                        .type("Databases: MySQL - Redis - MongoDB - PostgreSQL")
+                        .break()
+                        .type("Frameworks and Tools: Laravel - Symfony - Yii - Gin - GORM - GraphQL - gRPC - REST")
+                        .break()
+                        .type("Utilities:  Git - Docker - RabbitMQ - MinIO - ELK Stack - Memcached - Swagger - Linux")
+                        .break()
+                        .type("Concepts: TDD - DDD - Design patterns - Software Architecture - Algorithms - Data Structures")
+                        .break()
+                        .type("Familiar with: Python -  Javascript - Neo4j - CI/CD - Shel")
+                        .break()
+                        .type("Languages: English (Professional Working Proficiency) - Persian (Native) - Arabic (Begginer)")
                     .go();
+                }
 
             }
 
@@ -98,41 +110,8 @@ $(document).ready(function () {
         }
         lastScrollTop = st;
     });
-
-    let owl = $('.owl-carousel');
-    owl.owlCarousel({
-        items: 1,
-
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        nav: true,
-        navClass: ['owl-next .btn', 'owl-prev .btn'],
-        navContainerClass: 'js-carousel-nav owl-nav',
-        loop: true,
-        dots: true,
-        responsive: {
-            0: {
-                items: 1,
-                autoHeight: true
-            },
-            480: {
-                items: 1,
-                autoHeight: false
-            },
-            576: {
-                items: 1
-            },
-            768: {
-                items: 1
-            },
-            992: {
-                items: 1
-            },
-            1200: {
-                items: 1
-            }
-        }
-    });
 });
+
+function scrollDownToPage() {
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}
